@@ -327,7 +327,7 @@ html, body {
 /* ===== FOOTER ===== */
 .footer {
   position: relative;
-  background: url('../resources/pics/wave.webp') center/cover no-repeat;
+  background: url('../resources/pics/hero.webp') center/cover no-repeat;
   color: #F2F2EB;
   padding: 80px 40px 40px;
   display: flex;

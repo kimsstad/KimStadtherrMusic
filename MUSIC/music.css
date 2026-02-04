@@ -245,7 +245,7 @@ animation: fadeInUp 1.6s ease-out forwards;
 
 /* main container */
 .music-main {
-  background: #0E1A38;
+  background: #0e1b2b;
   color: #F2F2EB;
   padding: 60px 40px 110px;
 }
@@ -328,9 +328,9 @@ animation: fadeInUp 1.6s ease-out forwards;
 /* ===== FOOTER ===== */
 .footer {
   position: relative;
-  background: url('../resources/pics/wave.webp') center/cover no-repeat;
+  background: url('../resources/pics/hero.webp') center/cover no-repeat;
   color: #fff;
-  padding: 120px 60px 40px;
+  padding: 100px 60px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;

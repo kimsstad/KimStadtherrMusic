@@ -243,7 +243,7 @@ html, body {
 /* ===== ABOUT / ENTRY SECTION ===== */
 .about-section {
   position: relative;
-background-color: #0E1A38;
+background-color: #0e1b2b;
 
 
   background-size: cover;       /* scales image to cover entire section */
@@ -330,7 +330,7 @@ background-color: #0E1A38;
 
 .card img {
   width: 100%;
-  aspect-ratio: 4 / 3;                  /* matches your tile proportions */
+  aspect-ratio: 4 / 3.5;                  /* matches your tile proportions */
   object-fit: cover;
   border-radius: 18px;
   display: block;
@@ -407,7 +407,7 @@ background-color: #0E1A38;
 
 /* LEFT SIDE — full bleed image */
 .about-kim-img {
-  background: url('resources/pics/aboutpic.webp') center center / cover no-repeat;
+  background: url('resources/pics/217A3591-3.webp') center center / cover no-repeat;
   width: 100%;
   height: auto;
   min-height: 100%;
@@ -700,7 +700,7 @@ background-color: #0E1A38;
 /* ===== FOOTER ===== */
 .footer {
   position: relative;
-  background: url('resources/pics/wave.webp') center/cover no-repeat;
+  background: url('resources/pics/hero.webp') center/cover no-repeat;
   color: #fff;
   padding: 120px 60px 40px;
   display: flex;
