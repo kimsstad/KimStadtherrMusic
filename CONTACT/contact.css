@@ -51,7 +51,7 @@ html, body {
 
 /* Hover effect: glow + slight lift */
 .nav-links a:hover {
-  color: #4B54D4;
+  color: #8DA1A6;
   text-shadow: 0 0 8px rgba(242, 242, 235, 0.6);
   transform: translateY(-2px);
 }
@@ -187,7 +187,7 @@ html, body {
 
 .cta-btn:hover { 
   background: #F2F2EB; 
-  color: #4B54D4; 
+  color: #8DA1A6; 
 }
 
 /* ===== RESPONSIVE NAV & HERO ===== */
@@ -240,7 +240,7 @@ html, body {
 /* ===== CONTACT DETAILS SECTION ===== */
 .details-section {
   padding: 80px 60px;
-  background-color: #0E1A38; /* matches site panel color */
+  background-color: #283B40; /* matches site panel color */
   color: #F2F2EB;
 }
 
@@ -281,7 +281,7 @@ html, body {
   color:#F2F2EB;
   text-decoration:none;
 }
-.details-left .cta-btn.small:hover { background:#F2F2EB; color:#4B54D4; }
+.details-left .cta-btn.small:hover { background:#F2F2EB; color:#8DA1A6; }
 
 /* RIGHT */
 .details-right { display:flex; flex-direction:column; gap:20px; padding-top:6px; }
@@ -296,7 +296,7 @@ html, body {
 
 .contact-details-heading {
   font-family:'Monda', sans-serif;
-  color:#4B54D4;
+  color:#8DA1A6;
   font-size:16px;
   letter-spacing:1px;
   margin:0;
@@ -310,7 +310,7 @@ html, body {
 }
 .contact-details-list li { font-size:15px; color: rgba(242,242,235,0.94); line-height:1.6; }
 .contact-details-list a { color:#F2F2EB; text-decoration:none; font-weight:600; }
-.contact-details-list a:hover { color:#4B54D4; }
+.contact-details-list a:hover { color:#8DA1A6; }
 
 /* responsive: stack columns on small screens */
 @media (max-width:1000px) {
@@ -374,7 +374,7 @@ html, body {
   font-family: 'Monda', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #4B54D4;
+  color: #8DA1A6;
   margin: 0 0 8px 0;
   letter-spacing: 1px;
 }

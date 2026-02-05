@@ -51,7 +51,7 @@ html, body {
 
 /* Hover effect: glow + slight lift */
 .nav-links a:hover {
-  color: #4B54D4;
+  color: #8DA1A6;
   text-shadow: 0 0 8px rgba(242, 242, 235, 0.6);
   transform: translateY(-2px);
 }
@@ -188,7 +188,7 @@ animation: fadeInUp 1.6s ease-out forwards;
 
 .cta-btn:hover { 
   background: #F2F2EB; 
-  color: #4B54D4; 
+  color: #8DA1A6; 
 }
 
 /* ===== RESPONSIVE NAV & HERO ===== */
@@ -245,7 +245,7 @@ animation: fadeInUp 1.6s ease-out forwards;
 
 /* main container */
 .music-main {
-  background: #0e1b2b;
+  background: #283B40;
   color: #F2F2EB;
   padding: 60px 40px 110px;
 }
@@ -270,7 +270,7 @@ animation: fadeInUp 1.6s ease-out forwards;
   gap:18px;
   padding:18px;
   border-radius:12px;
-  background: rgba(255,255,255,0.02);
+  background: rgba(255,255,255,0.06);
   align-items:flex-start;
   cursor: pointer;
   transition: transform .22s ease, box-shadow .22s ease;
@@ -372,7 +372,7 @@ animation: fadeInUp 1.6s ease-out forwards;
   font-family: 'Monda', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #4B54D4;
+  color: #8DA1A6;
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
@@ -407,7 +407,7 @@ animation: fadeInUp 1.6s ease-out forwards;
 }
 
 .email a:hover {
-  color: #4B54D4; /* same blue as your section headers */
+  color: #8DA1A6; /* same blue as your section headers */
   text-shadow: 0 0 6px rgba(75, 84, 212, 0.6);
 }
 
@@ -444,7 +444,7 @@ animation: fadeInUp 1.6s ease-out forwards;
 
 .contact-btn:hover {
   background: #fff;
-  color: #4B54D4;
+  color: #8DA1A6;
 }
 
 /* Footer bottom */

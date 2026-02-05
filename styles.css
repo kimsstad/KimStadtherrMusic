@@ -51,7 +51,7 @@ html, body {
 
 /* Hover effect: glow + slight lift */
 .nav-links a:hover {
-  color: #4B54D4;
+  color: #8DA1A6;
   text-shadow: 0 0 8px rgba(242, 242, 235, 0.6);
   transform: translateY(-2px);
 }
@@ -188,7 +188,7 @@ html, body {
 
 .cta-btn:hover { 
   background: #F2F2EB; 
-  color: #4B54D4; 
+  color: #8DA1A6; 
 }
 
 /* ===== RESPONSIVE NAV & HERO ===== */
@@ -238,12 +238,18 @@ html, body {
   .logo { font-size: 44px; }
 }
 
+.cta-btn {
+  text-decoration: none;
+}
+.card-btn {
+  text-decoration: none;
+}
 
 
 /* ===== ABOUT / ENTRY SECTION ===== */
 .about-section {
   position: relative;
-background-color: #0e1b2b;
+background-color: #283B40;
 
 
   background-size: cover;       /* scales image to cover entire section */
@@ -502,10 +508,19 @@ background-color: #0e1b2b;
 /* ===== LATEST RELEASES SECTION ===== */
 .releases-section {
   position: relative;
-  background: url('resources/pics/music\ bg.webp') center center / cover no-repeat;
   overflow: hidden;
   color: #F2F2EB;
 }
+
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
 
 .releases-section::before {
   content: "";
@@ -643,7 +658,7 @@ background-color: #0e1b2b;
 }
 
 .release-image:hover .play-icon {
-  background: #4B54D4;
+  background: #8DA1A6;
   color: #F2F2EB;
   transform: scale(1.1);
 }
@@ -744,7 +759,7 @@ background-color: #0e1b2b;
   font-family: 'Monda', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #4B54D4;
+  color: #8DA1A6;
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
@@ -779,7 +794,7 @@ background-color: #0e1b2b;
 }
 
 .email a:hover {
-  color: #4B54D4; /* same blue as your section headers */
+  color: #8DA1A6; /* same blue as your section headers */
   text-shadow: 0 0 6px rgba(75, 84, 212, 0.6);
 }
 
@@ -816,7 +831,7 @@ background-color: #0e1b2b;
 
 .contact-btn:hover {
   background: #fff;
-  color: #4B54D4;
+  color: #8DA1A6;
 }
 
 /* Footer bottom */

@@ -51,7 +51,7 @@ html, body {
 
 /* Hover effect: glow + slight lift */
 .nav-links a:hover {
-  color: #4B54D4;
+  color: #8DA1A6;
   text-shadow: 0 0 8px rgba(242, 242, 235, 0.6);
   transform: translateY(-2px);
 }
@@ -188,7 +188,7 @@ html, body {
 
 .cta-btn:hover { 
   background: #F2F2EB; 
-  color: #4B54D4; 
+  color: #8DA1A6; 
 }
 
 /* ===== RESPONSIVE NAV & HERO ===== */
@@ -245,7 +245,7 @@ html, body {
   grid-template-columns: 1fr 2fr 1fr;
   align-items: start;
    justify-items: stretch;
-  background-color: #0E1A38;
+  background-color: #283B40;
   color: #F2F2EB;
   padding: 100px 60px;
  
@@ -286,7 +286,7 @@ html, body {
   font-family: 'Monda', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  color: #4B54D4;
+  color: #8DA1A6;
   letter-spacing: 1px;
   margin-bottom: 20px;
   text-align: left;
@@ -314,6 +314,7 @@ html, body {
 .bio-images img {
   width: 100%;
   max-width: 250px;
+  max-height: 240px;
   border-radius: 12px;
   object-fit: cover;
   flex: 1; /* Make each image take up equal vertical space */
@@ -344,7 +345,7 @@ html, body {
 
 .bio-text .cta-btn:hover {
   background: #F2F2EB;
-  color: #4B54D4;
+  color: #8DA1A6;
 }
 
 /* Responsive */
@@ -445,7 +446,7 @@ html, body {
   font-family: 'Monda', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #4B54D4;
+  color: #8DA1A6;
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
@@ -480,7 +481,7 @@ html, body {
 }
 
 .email a:hover {
-  color: #4B54D4; /* same blue as your section headers */
+  color: #8DA1A6; /* same blue as your section headers */
   text-shadow: 0 0 6px rgba(75, 84, 212, 0.6);
 }
 
@@ -517,7 +518,7 @@ html, body {
 
 .contact-btn:hover {
   background: #fff;
-  color: #4B54D4;
+  color: #8DA1A6;
 }
 
 /* Footer bottom */
