@@ -307,7 +307,7 @@ html, body {
   flex-direction: column;
   justify-content: space-between; /* Stretch images evenly */
   align-items: center;
-  height: 100%; /* Match the height of the bio text */
+  height: auto; /* Match the height of the bio text */
   gap: 18px; /* Small, even gap between images */
 }
 
@@ -397,6 +397,42 @@ html, body {
   height: clamp(34px, 4.5vh, 40px);
   font-size: clamp(13px, 2.8vw, 16px);
 }
+
+@media (max-width: 768px) {
+
+  .bio-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 16px;
+  }
+
+  .bio-name-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bio-name {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 42px;
+    text-align: center;
+  }
+
+  .bio-text {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .bio-images {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+}
+
 
 
 /* ===== FOOTER ===== */
@@ -559,5 +595,23 @@ html, body {
 
   .footer-right {
     margin-top: 30px;
+  }
+}
+@media (max-width: 1200px) {
+  .bio-section {
+    grid-template-columns: 1fr;
+    padding: 80px 40px;
+  }
+}
+@media (max-width: 1200px) {
+  .bio-text {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bio-text p,
+  .bio-text h3 {
+    text-align: center;
   }
 }

@@ -322,6 +322,38 @@ html, body {
   .contact-details-list li { text-align:center; }
 }
 
+@media (max-width: 768px) {
+
+  .details-section {
+    padding: 60px 16px;
+  }
+
+  .details-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .details-left,
+  .details-right {
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .details-image {
+    width: 100%;
+    height: auto;
+    max-width: 320px;
+  }
+
+  .details-blurb {
+    max-width: 100%;
+  }
+}
 
 
 /* ===== FOOTER ===== */
