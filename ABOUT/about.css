@@ -615,3 +615,34 @@ html, body {
     text-align: center;
   }
 }
+@media (max-width: 600px) {
+
+  .details-section {
+    padding: 50px 14px;
+  }
+
+  .details-inner {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 24px;
+  }
+
+  .details-left,
+  .details-right {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .details-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .details-blurb {
+    max-width: 100%;
+  }
+}
