@@ -14,6 +14,13 @@ html, body {
   overflow-x: hidden;
 }
 
+@font-face {
+    font-family: 'Biro Script Plus';
+    src: url('resources/fonts/Biro\ Script\ Plus.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
   position: absolute;
