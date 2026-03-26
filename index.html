@@ -1,219 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Official website of Kim Stadtherr — genreless music for healing and hope." />
-  <title>Kim Stadtherr Music</title>
-<link rel="icon" type="image/png" href="resources/pics/favicon.png">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Monda:wght@600&family=MuseoModerno:wght@800&display=swap" rel="stylesheet">
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kim Stadtherr transmission interface. Receive music, subject files, and contact requests through an intercepted signal system.">
+  <title>Kim Stadtherr | Transmission Interface</title>
+  <link rel="icon" type="image/png" href="resources/pics/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="screen-noise" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="screen-vignette" aria-hidden="true"></div>
 
-  <!-- ===== NAVBAR + HERO SECTION ===== -->
-  <header class="hero">
-    <!-- 🎥 Background Video -->
-    <video autoplay muted loop playsinline class="hero-video">
-      <source src="resources/pics/home-hero.webm" type="video/webm">
-      Your browser does not support the video tag.
-    </video>
-
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <!-- CSS-only toggle -->
-      <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-hidden="true" />
-      <label for="nav-toggle" class="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </label>
-
-      <ul class="nav-links" id="site-nav">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="ABOUT/about.html">ABOUT</a></li>
-        <li><a href="MUSIC/music.html">MUSIC</a></li>
-        <li><a href="CONTACT/contact.html">CONTACT</a></li>
-      </ul>
-    </nav>
-
-    <div class="hero-content">
-      <h1 class="logo">KIM STADTHERR</h1>
-      <a href="MUSIC/music.html" class="cta-btn">LISTEN NOW</a>
-
-    </div>
-  </header>
-
-  <!-- ===== ABOUT / ENTRY SECTION ===== -->
-  <section class="about-section">
-    <div class="about-inner">
-      <!-- Big headline -->
-      <h2 class="about-headline">
-<p class="tagline">
-   A cinematic exploration of the <em>spirituality</em> beneath <em>emotion</em>.
-</p>
-
-      </h2>
-
-      <!-- Divider "DIVE IN" -->
-      <div class="divider">
-        <span>DIVE IN</span>
-      </div>
-
-      <!-- Card row -->
-      <div class="card-grid">
-        <!-- Card 1 -->
-      <article class="card">
-        <img src="resources/pics/217A3591-2.webp" alt="Silhouette of Kim Stadtherr" />
-        <a href="ABOUT/about.html" class="card-btn">BIOGRAPHY</a>
-      </article>
-
-      <!-- Card 2 -->
-      <article class="card">
-        <img src="resources/pics/saveme.webp" alt="Empty Tomb single cover" />
-        <a href="MUSIC/music.html" class="card-btn">MUSIC</a>
-      </article>
-
-      <!-- Card 3 -->
-      <article class="card">
-        <img src="resources/pics/contact.webp" alt="Contact / portfolio preview" />
-        <a href="CONTACT/contact.html" class="card-btn">CONTACT</a>
-      </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT KIM SECTION ===== -->
-  <section class="about-kim">
-    <div class="about-kim-inner">
-      <div class="about-kim-img"></div>
-
-      <div class="about-kim-text">
-        <h2 class="about-kim-heading">Behind the <em>SOUND</em></h2>
-        <p>
-          I’m Kim Stadtherr — a singer, songwriter, and producer. Music has always been how I process the world. 
-          It started as a quiet way to understand what I was feeling, and somewhere along the line, it became something I needed to share.<br><br>
-          I’m not chasing a genre or a formula. I care about creating something that moves people—whether it stirs something deep, 
-          brings clarity, or just makes the noise feel a little more beautiful. Every song is a piece of that process.<br><br>
-          I believe music doesn’t have to be perfect to be powerful. Sometimes it’s the cracks, the contrast, the rawness that hits the hardest. 
-          That’s what I aim for—honest sound, layered with meaning, open to interpretation. I hope the songs I make give people space to feel 
-          something real, in their own way and in their own time.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== LATEST RELEASES SECTION ===== -->
-<section class="releases-section">
-    <video class="bg-video" autoplay muted loop playsinline>
-    <source src="resources/pics/releases.webm" type="video/webm">
-  </video>
-  <div class="releases-inner">
-
-    <div class="releases-divider">
-      <span>LATEST RELEASES</span>
-    </div>
-
-    <h2 class="releases-heading">Vulnerable and <em>loud...</em></h2>
-
-    <div class="releases-grid">
-      <!-- Card 1 -->
-      <div class="release-card">
-        <div class="release-image">
-          <a href="https://open.spotify.com/track/2j68iUQHEGyHMFrsPbkoP6?si=56a7e8f0f4294759" target="_blank">
-            <img src="resources/pics/saveme.webp" alt="Save Me - Kim Stadtherr">
-            <div class="play-icon">▶</div>
-          </a>
+  <div class="app-shell">
+    <section class="boot-screen" data-screen="boot" aria-live="polite">
+      <div class="boot-panel">
+        <div class="boot-status" id="boot-status">NO SIGNAL</div>
+        <div class="boot-meter" aria-hidden="true">
+          <span class="boot-meter__beam"></span>
         </div>
-        <p class="release-title">SAVE ME</p>
+        <p class="boot-prompt" id="boot-prompt">CLICK OR PRESS ANY KEY TO SEARCH FOR SIGNAL</p>
+        <div class="boot-log" id="boot-log"></div>
+        <div class="boot-message" id="boot-message" hidden>
+          <p>YOU WERE NOT MEANT TO STAY BURIED</p>
+        </div>
+        <div class="boot-actions" id="boot-actions" hidden>
+          <button class="terminal-action" id="enter-system" type="button">&gt; ENTER SYSTEM</button>
+          <p class="boot-hint">PRESS ENTER OR CLICK TO ENTER SYSTEM</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="system-screen is-hidden" data-screen="system" aria-label="Transmission system">
+      <header class="system-header">
+        <div class="system-status">
+          <button class="reset-link" id="reset-system" type="button">&gt; RESET SIGNAL</button>
+          <p>STATUS: <span class="signal-active">ACTIVE</span></p>
+          <p>UPLINK: SECURE</p>
+        </div>
+        <div class="system-meta">
+          <p class="recording-indicator"><span class="record-dot"></span> REC</p>
+          <p id="system-date"></p>
+        </div>
+      </header>
+
+      <div class="system-layout">
+        <aside class="system-nav" aria-label="Transmission directory">
+          <div class="nav-label">DIRECTORY_</div>
+          <button class="nav-item is-active" type="button" data-panel-target="transmission">
+            <span class="nav-bracket">[</span>
+            <span>TRANSMISSION 001</span>
+            <span class="nav-bracket">]</span>
+          </button>
+          <button class="nav-item" type="button" data-panel-target="archive">
+            <span class="nav-bracket">[</span>
+            <span>ARCHIVE</span>
+            <span class="nav-bracket">]</span>
+          </button>
+          <button class="nav-item" type="button" data-panel-target="subject">
+            <span class="nav-bracket">[</span>
+            <span>SUBJECT FILE</span>
+            <span class="nav-bracket">]</span>
+          </button>
+          <button class="nav-item" type="button" data-panel-target="contact">
+            <span class="nav-bracket">[</span>
+            <span>TRANSMISSION REQUEST</span>
+            <span class="nav-bracket">]</span>
+          </button>
+          <div class="key-hints">
+            <p>KEYS: 1 2 3 4</p>
+            <p>ARROWS: CYCLE</p>
+          </div>
+        </aside>
+
+        <main class="system-main">
+          <section class="panel is-active" id="panel-transmission" data-panel="transmission">
+            <div class="panel-transition-copy" id="transmission-loading">
+              <p>ACCESSING FILE...</p>
+              <p>DECRYPTING PRIMARY SIGNAL...</p>
+            </div>
+
+            <div class="panel-body is-hidden" id="transmission-content">
+              <div class="transmission-layout">
+                <div class="transmission-copy">
+                  <p class="eyebrow">[ TRANSMISSION 001 ]</p>
+                  <h1 class="transmission-title">SAVE_ME</h1>
+                  <p class="transmission-status">STATUS: PRIORITY SIGNAL</p>
+                  <p class="transmission-line">THIS IS THE FIRST CALL.</p>
+                  <div class="transmission-file-row">
+                    <span>[ FILE ACTIVE ]</span>
+                    <div class="transmission-meta">
+                      <span>SIGNAL STRENGTH: STABLE</span>
+                      <span>DUR: 04:32</span>
+                    </div>
+                  </div>
+                  <div class="player-shell" aria-label="Transmission player">
+                    <div class="waveform" id="waveform" aria-hidden="true"></div>
+                    <div class="player-controls">
+                      <div class="player-buttons">
+                        <button class="player-button" type="button" aria-label="Previous transmission">◀◀</button>
+                        <button class="player-button player-button--primary" id="play-toggle" type="button" aria-label="Play transmission">▶</button>
+                        <button class="player-button" type="button" aria-label="Next transmission">▶▶</button>
+                      </div>
+                      <div class="progress-shell" id="progress-shell" aria-label="Playback progress" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+                        <div class="progress-bar">
+                          <div class="progress-fill" id="progress-fill"></div>
+                          <div class="progress-head" id="progress-head"></div>
+                        </div>
+                      </div>
+                      <div class="player-time">
+                        <span id="current-time">00:00</span>
+                        <span>VOL: 78</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="link-cluster">
+                    <p class="eyebrow">EXTERNAL CHANNELS</p>
+                    <div class="stacked-links">
+                      <a href="#" class="terminal-link">&gt; SPOTIFY</a>
+                      <a href="#" class="terminal-link">&gt; APPLE MUSIC</a>
+                      <a href="#" class="terminal-link">&gt; YOUTUBE</a>
+                    </div>
+                  </div>
+                  <div class="system-note">
+                    <p>[ SYSTEM NOTE ]</p>
+                    <p>EACH FILE IS A TRANSMISSION.</p>
+                    <p>YOU ARE NOT BROWSING.</p>
+                    <p>YOU ARE RECEIVING.</p>
+                  </div>
+                </div>
+                <aside class="signal-visual">
+                  <p class="eyebrow">SIGNAL VISUAL</p>
+                  <div class="signal-frame">
+                    <img src="resources/pics/saveme.webp" alt="Transmission artwork for Save Me">
+                    <div class="signal-live">LIVE</div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-archive" data-panel="archive">
+            <div class="panel-intro">
+              <p>ACCESSING SECURE ARCHIVE...</p>
+              <p>SIGNALS STORED. NOT ALL RECOVERED.</p>
+            </div>
+            <div class="archive-list">
+              <article class="archive-item" data-track="001">
+                <button class="archive-trigger" type="button">
+                  <span class="archive-code">001</span>
+                  <span class="archive-title">SAVE ME</span>
+                  <span class="archive-status">PRIORITY SIGNAL</span>
+                  <span class="archive-action">&gt; ACCESS</span>
+                </button>
+                <div class="archive-detail">
+                  <p>PRIMARY TRANSMISSION RESTORED. CHANNELS OPEN.</p>
+                  <div class="archive-streams">
+                    <span>STREAM:</span>
+                    <a href="#">SPOTIFY</a>
+                    <a href="#">APPLE MUSIC</a>
+                    <a href="#">YOUTUBE</a>
+                  </div>
+                </div>
+              </article>
+              <article class="archive-item" data-track="002">
+                <button class="archive-trigger" type="button">
+                  <span class="archive-code">002</span>
+                  <span class="archive-title">EMPTY TOMB</span>
+                  <span class="archive-status">BROADCASTING</span>
+                  <span class="archive-action">&gt; ACCESS</span>
+                </button>
+                <div class="archive-detail">
+                  <p>FILE FRAGMENT PRESENT. RESPONSE WINDOW DETECTED.</p>
+                  <div class="archive-streams">
+                    <span>STREAM:</span>
+                    <a href="#">SPOTIFY</a>
+                    <a href="#">APPLE MUSIC</a>
+                    <a href="#">YOUTUBE</a>
+                  </div>
+                </div>
+              </article>
+              <article class="archive-item" data-track="003">
+                <button class="archive-trigger" type="button">
+                  <span class="archive-code">003</span>
+                  <span class="archive-title">COMING HOME</span>
+                  <span class="archive-status">STORED</span>
+                  <span class="archive-action">&gt; ACCESS</span>
+                </button>
+                <div class="archive-detail">
+                  <p>SIGNAL INTACT. LOW INTERFERENCE. MEMORY LOAD STABLE.</p>
+                  <div class="archive-streams">
+                    <span>STREAM:</span>
+                    <a href="#">SPOTIFY</a>
+                    <a href="#">APPLE MUSIC</a>
+                    <a href="#">YOUTUBE</a>
+                  </div>
+                </div>
+              </article>
+              <article class="archive-item" data-track="004">
+                <button class="archive-trigger" type="button">
+                  <span class="archive-code">004</span>
+                  <span class="archive-title">RUN AWAY</span>
+                  <span class="archive-status">UNSTABLE</span>
+                  <span class="archive-action">&gt; ACCESS</span>
+                </button>
+                <div class="archive-detail">
+                  <p>CHANNEL FLICKER PRESENT. PLAYBACK MAY DRIFT.</p>
+                  <div class="archive-streams">
+                    <span>STREAM:</span>
+                    <a href="#">SPOTIFY</a>
+                    <a href="#">APPLE MUSIC</a>
+                    <a href="#">YOUTUBE</a>
+                  </div>
+                </div>
+              </article>
+              <article class="archive-item" data-track="005">
+                <button class="archive-trigger" type="button">
+                  <span class="archive-code">005</span>
+                  <span class="archive-title">ANYONE OUT THERE</span>
+                  <span class="archive-status">SIGNAL LOST</span>
+                  <span class="archive-action">&gt; ACCESS</span>
+                </button>
+                <div class="archive-detail">
+                  <p>RESPONSE TRACE DETECTED. TRANSMISSION NOT FULLY RETURNED.</p>
+                  <div class="archive-streams">
+                    <span>STREAM:</span>
+                    <a href="#">SPOTIFY</a>
+                    <a href="#">APPLE MUSIC</a>
+                    <a href="#">YOUTUBE</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-subject" data-panel="subject">
+            <div class="subject-header">
+              <p class="eyebrow">[ SUBJECT FILE ]</p>
+              <p>STATUS: ACTIVE</p>
+            </div>
+            <div class="subject-layout">
+              <div class="subject-copy">
+                <div class="subject-fragments">
+                  <p>I WAS LOST</p>
+                  <p>I WAS CALLED</p>
+                  <p>I ANSWERED</p>
+                </div>
+                <div class="subject-block">
+                  <p class="subject-label">ORIGIN TRACE</p>
+                  <p>MUSIC CAME FIRST.</p>
+                  <p>PIANO. GUITAR. VOICE.</p>
+                  <p>THE SIGNAL WAS ALREADY INSIDE THE ROOM.</p>
+                </div>
+                <div class="subject-block">
+                  <p class="subject-label">SYSTEM ENTRY</p>
+                  <p>PRODUCTION BECAME THE LANGUAGE.</p>
+                  <p>SOUND DESIGN BECAME THE DOOR.</p>
+                  <p>LIVE SYSTEMS TAUGHT THE BODY HOW TO CARRY THE MESSAGE.</p>
+                </div>
+                <div class="subject-block">
+                  <p class="subject-label">PURPOSE</p>
+                  <p>&gt; TO TRANSMIT</p>
+                  <p>&gt; TO PROCESS</p>
+                  <p>&gt; TO TURN EXPERIENCE INTO SOUND</p>
+                </div>
+              </div>
+              <aside class="subject-aside">
+                <div class="subject-frame">
+                  <img src="resources/pics/aboutpic.webp" alt="Kim Stadtherr portrait">
+                  <div class="subject-corruption">[ IMAGE DATA CORRUPTED ]</div>
+                </div>
+                <div class="subject-stats">
+                  <p>CURRENT STATE</p>
+                  <div><span>ORIGIN:</span> <span>NAMIBIA</span></div>
+                  <div><span>LOCATION:</span> <span>SOUTH AFRICA</span></div>
+                  <div><span>GENRE:</span> <span>UNDEFINED</span></div>
+                  <div><span>ELEMENTS:</span> <span>ROCK / POP / ELECTRONIC</span></div>
+                  <div><span>THEMES:</span> <span>SPIRITUALITY / TRANSFORMATION / REBIRTH</span></div>
+                  <div><span>LATEST SIGNAL:</span> <span>SAVE ME</span></div>
+                </div>
+              </aside>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-contact" data-panel="contact">
+            <div class="contact-header">
+              <p class="eyebrow">[ TRANSMISSION REQUEST ]</p>
+              <p>INITIATE CONTACT. OPEN CHANNEL. SEND SIGNAL.</p>
+            </div>
+            <div class="contact-console" id="contact-console" aria-live="polite">
+              <p>&gt; SYS: CONNECTION SECURE.</p>
+              <p>&gt; SYS: AWAITING INPUT...</p>
+            </div>
+            <form class="contact-form" id="contact-form">
+              <label class="sr-only" for="contact-input">Transmit message</label>
+              <span class="contact-prefix">&gt;</span>
+              <input id="contact-input" name="message" type="text" autocomplete="off" placeholder="TRANSMIT MESSAGE..." maxlength="140">
+              <button type="submit">[ SEND ]</button>
+            </form>
+            <div class="contact-grid">
+              <div>
+                <p>COMM DIRECT</p>
+                <a href="mailto:signal@domain.void">SIGNAL@DOMAIN.VOID</a>
+              </div>
+              <div>
+                <p>SOCIAL NODES</p>
+                <a href="#">INSTAGRAM</a>
+                <a href="#">TIKTOK</a>
+                <a href="#">YOUTUBE</a>
+              </div>
+            </div>
+          </section>
+        </main>
       </div>
 
-      <!-- Card 2 -->
-      <div class="release-card">
-        <div class="release-image">
-          <a href="https://open.spotify.com/track/2fuB8zoQY1VHzIO81g1OR5?si=d915cb1f4ed448bd" target="_blank">
-            <img src="resources/pics/album cover.webp" alt="Empty Tomb - Kim Stadtherr">
-            <div class="play-icon">▶</div>
-          </a>
-        </div>
-        <p class="release-title">EMPTY TOMB</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="release-card">
-        <div class="release-image">
-          <a href="https://open.spotify.com/track/4TwyhLJn43LOSKH1PDLf8l?si=28df86f4f39e47ca" target="_blank">
-            <img src="resources/pics/runaway.webp" alt="Run Away - Kim Stadtherr">
-            <div class="play-icon">▶</div>
-          </a>
-        </div>
-        <p class="release-title">RUN AWAY</p>
-      </div>
-    </div>
+      <footer class="system-footer">
+        <p>END OF DIRECTORY</p>
+        <button class="terminal-action terminal-action--ghost" id="next-transmission" type="button">&gt; NEXT TRANSMISSION</button>
+        <p>SOURCE: KIM STADTHERR</p>
+      </footer>
+    </section>
   </div>
-</section>
 
-<!-- ===== SPOTIFY SECTION ===== -->
-<section class="spotify-section">
-  <iframe
-    data-testid="embed-iframe"
-    src="https://open.spotify.com/embed/artist/0hokSbRtlHVFdZwOsFYGqc?utm_source=generator&theme=0"
-    width="100%"
-    height="100%"
-    frameborder="0"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy">
-  </iframe>
-</section>
-
-<footer class="footer">
-  <!-- Centered logo -->
-  <img src="resources/pics/logo.webp" alt="Kim Stadtherr Logo" class="footer-logo">
-
-  <div class="footer-inner">
-    <div class="footer-left">
-      <div class="footer-group">
-        <h3>FOLLOW</h3>
-        <div class="social-icons">
-          <a href="https://www.instagram.com/kimstadtherr/" target="_blank"><img src="resources/pics/instagram.svg" alt="Instagram"></a>
-          <a href="https://www.facebook.com/kimstadtherrmusic/" target="_blank"><img src="resources/pics/facebook.svg" alt="Facebook"></a>
-          <a href="https://www.tiktok.com/@kim.stadtherr" target="_blank"><img src="resources/pics/tiktok.svg" alt="TikTok"></a>
-        </div>
-      </div>
-
-      <div class="footer-group">
-        <h3>LISTEN</h3>
-        <div class="social-icons">
-          <a href="https://open.spotify.com/artist/0hokSbRtlHVFdZwOsFYGqc?si=p2YC-2TeQLCRQobiwJVYVQ" target="_blank"><img src="resources/pics/spotify.svg" alt="Spotify"></a>
-          <a href="https://music.apple.com/us/artist/kim-stadtherr/1571021550" target="_blank"><img src="resources/pics/apple-music.svg" alt="Apple Music"></a>
-          <a href="https://www.youtube.com/channel/UCa7ortmViYBAf_dO7evclag" target="_blank"><img src="resources/pics/youtube.svg" alt="YouTube"></a>
-        </div>
-      </div>
-
-      <div class="footer-group">
-<h3>GET IN TOUCH</h3>
-<p class="email">
-  <a href="mailto:KIMSTADTHERRMUSIC@GMAIL.COM">KIMSTADTHERRMUSIC@GMAIL.COM</a>
-</p>
-
-      </div>
-    </div>
-
-    <div class="footer-right">
-      <img src="resources/pics/aboutpic.webp" alt="Kim Stadtherr contact preview" class="contact-img">
-      <a href="CONTACT/contact.html" class="card-btn">CONTACT</a>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <hr class="footer-line">
-    <p>© 2025 Kim Stadtherr<br>Created by Papermoon Technical Creatives</p>
-  </div>
-</footer>
-
-
+  <script src="script.js"></script>
 </body>
 </html>
